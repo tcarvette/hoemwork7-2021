@@ -2,14 +2,14 @@ var video = document.querySelector("#player1");
 
 window.addEventListener("load", function() {
 	console.log("Good job opening the window");
-});
-
-document.querySelector("#play").addEventListener("click", function() {
 	var volume = document.querySelector("#volume");
-	console.log("Play Video");
 	document.querySelector("#slider").value = 100;
 	volume.innerHTML = (document.querySelector("#slider").value + "%");
 	video.volume = (document.querySelector("#slider").value/100);
+});
+
+document.querySelector("#play").addEventListener("click", function() {
+	console.log("Play Video");
 	video.play();
 });
 
