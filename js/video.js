@@ -5,10 +5,11 @@ window.addEventListener("load", function() {
 });
 
 document.querySelector("#play").addEventListener("click", function() {
+	var volume = document.querySelector("#volume");
 	console.log("Play Video");
 	document.querySelector("#slider").value = 100;
-	document.getElementById("#volume").innerHTML = (document.querySelector("#slider").value + "%");
-	document.querySelector("#volume").volume = document.querySelector("#slider").value;
+	volume.innerHTML = (document.querySelector("#slider").value + "%");
+	video.volume = document.querySelector("#slider").value;
 	video.play();
 });
 
