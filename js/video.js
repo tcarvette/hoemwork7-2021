@@ -25,7 +25,7 @@ document.querySelector("#slower").addEventListener("click", function() {
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	if (video.playbackRate == 1) {
+	if (video.playbackRate >= 1) {
 		var rate = (video.playbackRate * 0.05);
 		video.playbackRate += rate;
 	}
