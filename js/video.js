@@ -55,22 +55,20 @@ document.querySelector("#skip").addEventListener("click", function() {
 });
 
 document.querySelector("#mute").addEventListener("click", function() {
-	if(video.muted == true) {
-		video.muted = false;
-		document.getElementById('mute').value = "unmute"
-		document.getElementById('unmute').innerHTML = "Unmute";
+	if(video.muted == false) {
+		video.muted = true;
+		document.getElementById('mute').innerHTML = "Unmute";
 	}
 	else {
-		video.muted = true;
-		document.getElementById('unmute').value = "mute"
+		video.muted = false;
 		document.getElementById('mute').innerHTML = "Mute";
 	}
 });
 
 document.querySelector("#slider").addEventListener("click", function() {
 	var volume = document.querySelector("#volume");
-	volume.innerHTML = (document.querySelector("#slider").value + "%");
-	video.volume = (document.querySelector("#slider").value)/100;
+	volume.innerHTML = (this.value + "%");
+	video.volume = (this.value/100);
 	console.log(video.volume);
 });
 
