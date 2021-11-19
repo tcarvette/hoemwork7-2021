@@ -25,8 +25,18 @@ document.querySelector("#slower").addEventListener("click", function() {
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	var rate = (video.playbackRate * 0.05);
-	video.playbackRate += rate;
+	if(video.playbackRate == 0.95) {
+		video.playbackRate = 1;
+	}
+	else if(video.playbackRate == 0.9025) {
+		video.playbackRate = 0.95;
+	}
+	else if(video.playbackRate == 0.857375) {
+		video.playbackRate = 0.9025;
+	}
+	else if(video.playbackRate == 0.8145075) {
+		video.playbackRate = 0.857375;
+	}
 	console.log(video.playbackRate);
 });
 
@@ -43,10 +53,12 @@ document.querySelector("#skip").addEventListener("click", function() {
 document.querySelector("#mute").addEventListener("click", function() {
 	if(video.muted == true) {
 		video.muted = false;
-		document.getElementById('mute').innerHTML = "Unmute";
+		document.getElementById('mute').value = "unmute"
+		document.getElementById('unmute').innerHTML = "Unmute";
 	}
 	else {
 		video.muted = true;
+		document.getElementById('unmute').value = "mute"
 		document.getElementById('mute').innerHTML = "Mute";
 	}
 });
