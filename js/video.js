@@ -29,5 +29,34 @@ document.querySelector("#faster").addEventListener("click", function() {
 });
 
 document.querySelector("#skip").addEventListener("click", function() {
-	// tbd
+	console.log("Original location " + video.currentTime);
+	video.currentTime += 15;
+	if (video.currentTime >= video.duration) {
+		console.log("Go back to beginning");
+		video.currentTime = 0;
+	}
+	console.log("New location " + video.currentTime);
+});
+
+document.querySelector("#mute").addEventListener("click", function() {
+	if(video.muted == true) {
+		video.muted = false;
+		document.getElementById('mute').innerHTML = "Unmute";
+	}
+	else {
+		video.muted = true;
+		document.getElementById('mute').innerHTML = "Mute";
+	}
+});
+
+document.querySelector("#slider").addEventListener("clicl", function() {
+	console.log(this.value);
+});
+
+document.querySelector("#vintage").addEventListener("click", function() {
+	video.classList.add('oldSchool');
+});
+
+document.querySelector("#orig").addEventListener("click", function() {
+	video.classList.remove('oldSchool');
 });
