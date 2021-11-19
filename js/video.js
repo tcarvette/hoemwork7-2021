@@ -19,12 +19,12 @@ document.querySelector("#pause").addEventListener("click", function() {
 });
 
 document.querySelector("#slower").addEventListener("click", function() {
-	video.playbackRate -= 0.05;
+	video.playbackRate -= (video.playbackRate * 0.05);
 	console.log(video.playbackRate);
 });
 
 document.querySelector("#faster").addEventListener("click", function() {
-	video.playbackRate += 0.05;
+	video.playbackRate += (video.playbackRate * 0.05);
 	console.log(video.playbackRate);
 });
 
