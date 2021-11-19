@@ -20,6 +20,7 @@ document.querySelector("#pause").addEventListener("click", function() {
 
 document.querySelector("#slower").addEventListener("click", function() {
 	var rate = (video.playbackRate * 0.05);
+	console.log(rate);
 	video.playbackRate -= rate;
 	console.log(video.playbackRate);
 });
