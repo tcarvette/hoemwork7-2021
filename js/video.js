@@ -7,7 +7,7 @@ window.addEventListener("load", function() {
 document.querySelector("#play").addEventListener("click", function() {
 	console.log("Play Video");
 	var volume = document.querySelector("#volume");
-	document.querySelector("#slider").value = 100;
+	document.querySelector("#slider").value = 1;
 	volume.innerHTML = (document.querySelector("#slider").value + "%");
 	video.volume = document.querySelector("#slider").value;
 	video.play();
@@ -30,7 +30,7 @@ document.querySelector("#faster").addEventListener("click", function() {
 
 document.querySelector("#skip").addEventListener("click", function() {
 	console.log("Original location " + video.currentTime);
-	video.currentTime += 15;
+	video.currentTime += 0.15;
 	if (video.currentTime >= video.duration) {
 		console.log("Go back to beginning");
 		video.currentTime = 0;
